@@ -3,25 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reprobate Guitars</title>
-  <meta name="description" content="Guitar repair, setup, and custom work.">
-  <style>
-    :root { color-scheme: dark; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      display: flex; align-items: center; justify-content: center;
-      background: #111; color: #eee;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      text-align: center; padding: 0 16px;
-    }
-    h1 { font-size: clamp(2rem, 8vw, 4rem); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 .5rem; }
-    p { color: #999; font-size: 1.1rem; margin: 0; }
-  </style>
+  <title>Reprobate Guitars - Guitar Repair &amp; Custom Shop</title>
+  <meta name="description" content="Reprobate Guitars: guitar repair, pro setups, and custom work. Vintage or modern, guitars, basses and all string instruments. Free estimates on most repairs.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
+
+<div class="checker" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="stars" aria-hidden="true">&#9733; &#9733; &#9733;</div>
     <h1>Reprobate Guitars</h1>
-    <p>Repair &middot; Setup &middot; Custom Work &mdash; site coming soon.</p>
+    <p class="tagline">Guitar Repair &amp; Custom Shop</p>
+  </header>
+
+  <nav aria-label="Main">
+    <a href="#repair">Repairs</a>
+    <a href="#custom">Custom</a>
+    <a href="#why">About</a>
+    <a href="#quote">Get a Quote</a>
+  </nav>
+
+  <div class="marquee" role="presentation"><span>&#9733; Get Strung Out! &#9733; Hot setups &bull; Cool customs &bull; Vintage soul, modern skill &#9733;</span></div>
+  <p class="banner-sub">Welcome to the page! Pull up a chair and take a look around.</p>
+
+  <main>
+    <div class="cols">
+      <section id="repair" aria-labelledby="repair-h">
+        <h2 id="repair-h">Repair Services</h2>
+        <ul>
+          <li>Neck resets &amp; refrets</li>
+          <li>Crack &amp; brace repair</li>
+          <li>Electronics &amp; shielding</li>
+          <li>Nut &amp; saddle work</li>
+          <li>Pro setups &amp; intonation</li>
+          <li>Hardware upgrades</li>
+          <li>Fret level &amp; crown</li>
+          <li>Finish touch-ups</li>
+        </ul>
+      </section>
+
+      <section id="custom" aria-labelledby="custom-h">
+        <h2 id="custom-h">Custom Work</h2>
+        <ul>
+          <li>Custom builds &amp; parts</li>
+          <li>Pickup swaps &amp; wiring</li>
+          <li>Relic &amp; aged finishes</li>
+          <li>Tremolo &amp; bridge jobs</li>
+          <li>Custom finishes</li>
+          <li>Amp &amp; pedal mods</li>
+          <li>Lefty conversions</li>
+          <li>One-off dream builds</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="center">Vintage or modern instruments &mdash; guitars, bass guitars &amp; all string instruments.</p>
+
+    <section id="why" class="why" aria-labelledby="why-h">
+      <h2 id="why-h">Why the Cool Cats Choose Us</h2>
+      <div class="facts">
+        <div><strong>20+ Yrs</strong><span>Experience</span></div>
+        <div><strong>All Brands</strong><span>Welcome</span></div>
+        <div><strong>Tone First</strong><span>Always</span></div>
+      </div>
+    </section>
+
+    <section id="quote" aria-labelledby="quote-h">
+      <h2 id="quote-h">Ready to Rock? <span class="new">NEW!</span></h2>
+      <p>Holler at us &mdash; <strong>free estimates on most repairs.</strong> Fill out the form below (photos help a lot) and we'll get back to you, or just text or email.</p>
+
+      <div class="contact-boxes">
+        <div class="box"><b>Text</b><a href="sms:+14172476228">417-247-6228</a></div>
+        <div class="box"><b>Email</b><a href="mailto:reprobateguitars@gmail.com">reprobateguitars@gmail.com</a></div>
+      </div>
+      <p class="center small">Text 10am &ndash; 7pm</p>
+
+      <form id="quote-form" novalidate>
+        <label for="name">Your name <span class="req">*</span></label>
+        <input type="text" id="name" name="name" autocomplete="name" required maxlength="100">
+
+        <label for="email">Your email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required maxlength="150">
+
+        <label for="phone">Phone (optional, for texting)</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="30">
+
+        <label for="instrument">What are we working on?</label>
+        <input type="text" id="instrument" name="instrument" placeholder="e.g. 1972 Telecaster, Martin D-18, P-Bass" maxlength="150">
+
+        <label for="service">What do you need?</label>
+        <select id="service" name="service">
+          <option value="">Pick one...</option>
+          <option>Repair</option>
+          <option>Setup / intonation</option>
+          <option>Custom work / build</option>
+          <option>Electronics / pickups</option>
+          <option>Not sure yet</option>
+        </select>
+
+        <label for="message">Tell us what's going on <span class="req">*</span></label>
+        <textarea id="message" name="message" required maxlength="4000" placeholder="What's wrong, what you want done, any deadlines..."></textarea>
+
+        <label for="photos">Photos (optional)</label>
+        <input type="file" id="photos" name="photos" accept="image/*" multiple>
+        <p class="hint">Up to 5 photos. They get shrunk automatically so they upload fast.</p>
+        <div id="previews"></div>
+
+        <!-- Honeypot: real people never see this. Bots fill it in and get dropped. -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" id="submit-btn">Send it!</button>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
   </main>
+
+  <footer>
+    <div class="stars" aria-hidden="true">&#9733; &#9733; &#9733;</div>
+    <p><em>From vintage acoustics to hot-rod electrics &mdash; we fix 'em all.</em></p>
+    <p>You are visitor number<br><span class="counter" id="counter">000000</span></p>
+    <p>
+      <span class="badge">Best viewed with any browser</span>
+      <span class="badge">Made by hand, no templates</span>
+    </p>
+    <p class="small">&copy; Reprobate Guitars</p>
+  </footer>
+
+</div>
+
+<div class="checker red" aria-hidden="true"></div>
+<div class="checker" aria-hidden="true"></div>
+
+<script src="form.js"></script>
 </body>
 </html>

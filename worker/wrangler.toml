@@ -1,0 +1,18 @@
+name = "reprobate-guitars-forms"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Puts the Worker at https://forms.reprobate-guitars.com (Cloudflare creates the DNS record for you).
+routes = [
+  { pattern = "forms.reprobate-guitars.com", custom_domain = true }
+]
+
+# Email sending. destination_address must be verified in Cloudflare Email Routing (see README.md).
+[[send_email]]
+name = "EMAIL"
+destination_address = "reprobateguitars@gmail.com"
+
+[vars]
+# Must be an address on reprobate-guitars.com once Email Routing is enabled for the domain.
+FROM_ADDRESS = "forms@reprobate-guitars.com"
+TO_ADDRESS = "reprobateguitars@gmail.com"

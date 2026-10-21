@@ -1,0 +1,276 @@
+/* Reprobate Guitars - "coolest site you could have built in 1998", but readable on a phone */
+
+:root {
+  --black: #0a0a0a;
+  --panel: #1a1a1a;
+  --red: #c8203c;
+  --red-dark: #8f1229;
+  --gold: #f4c430;
+  --cream: #f5efe0;
+  --gray: #d0cabb;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--cream);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+a { color: var(--gold); }
+a:hover, a:focus { color: #fff; background: var(--red); }
+
+/* Checkerboard borders (top and bottom of page) */
+.checker {
+  height: 28px;
+  background:
+    repeating-conic-gradient(var(--cream) 0% 25%, var(--black) 0% 50%) 0 0 / 28px 28px;
+  border-top: 4px solid var(--red);
+  border-bottom: 4px solid var(--red);
+}
+.checker.red {
+  background:
+    repeating-conic-gradient(var(--red) 0% 25%, var(--black) 0% 50%) 0 0 / 28px 28px;
+  border-color: var(--black);
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+header { text-align: center; padding: 24px 0 8px; }
+
+h1 {
+  margin: 0;
+  font-family: Impact, "Arial Black", Haettenschweiler, sans-serif;
+  font-weight: normal;
+  font-size: clamp(2.2rem, 11vw, 4.2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-shadow: 3px 3px 0 var(--red);
+}
+
+.tagline {
+  margin: 6px 0 0;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 5vw, 1.7rem);
+  color: var(--gold);
+}
+
+.stars { color: var(--gold); letter-spacing: 0.4em; font-size: 1.3rem; }
+
+/* Navigation: chunky 1998 button bar */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+nav a {
+  display: block;
+  padding: 10px 14px;
+  min-width: 44px;
+  min-height: 44px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border: 3px outset #e65a70;
+}
+nav a:hover, nav a:focus { background: var(--gold); color: #000; }
+
+/* Scrolling banner (CSS version of the old <marquee>) */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--red);
+  border: 3px solid var(--gold);
+  color: #fff;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 18s linear infinite;
+}
+@keyframes scroll { to { transform: translateX(-100%); } }
+
+.banner-sub { text-align: center; color: var(--gray); margin: 10px 0 24px; }
+
+/* Section headings */
+h2 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.7rem;
+  color: var(--gold);
+  border-bottom: 4px solid var(--red);
+  padding-bottom: 4px;
+  margin: 32px 0 12px;
+}
+
+/* Services: two-column "table" that stacks on phones */
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cols ul { list-style: none; margin: 0; padding: 0; }
+.cols li { padding: 5px 0 5px 1.8em; position: relative; }
+.cols li::before {
+  content: "\2605";
+  color: var(--red);
+  position: absolute;
+  left: 0;
+  /* red stars on black are a bit dim, so give them a gold edge */
+  text-shadow: 0 0 1px var(--gold);
+}
+
+/* "Why the cool cats choose us" strip */
+.why {
+  background: #2a2a2a;
+  border: 3px ridge var(--gray);
+  margin: 32px 0;
+  padding: 16px;
+  text-align: center;
+}
+.why h2 { border: 0; margin-top: 0; font-family: "Times New Roman", serif; font-style: italic; text-transform: none; }
+.facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.facts div { flex: 1 1 150px; }
+.facts strong {
+  display: block;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-weight: normal;
+  font-size: 1.6rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.facts span { color: var(--gold); }
+
+/* Contact boxes */
+.contact-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.box {
+  background: var(--panel);
+  border: 4px double var(--red);
+  padding: 14px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.box b { display: block; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; }
+.box a { font-size: 1.15rem; font-weight: bold; }
+
+.center { text-align: center; }
+.small { font-size: 0.9rem; color: var(--gray); }
+
+/* Blinking NEW! badge */
+.new {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 1px 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: blink 1.1s steps(2, start) infinite;
+}
+@keyframes blink { to { visibility: hidden; } }
+
+/* Quote form */
+form {
+  background: var(--panel);
+  border: 4px ridge var(--gray);
+  padding: 18px;
+}
+label { display: block; margin: 14px 0 4px; font-weight: bold; color: var(--gold); }
+.req { color: #ff8a9b; }
+input[type=text], input[type=email], input[type=tel], select, textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px; /* prevents iOS zoom on focus */
+  color: #000;
+  background: #fffdf5;
+  border: 3px inset var(--gray);
+  padding: 10px;
+}
+textarea { min-height: 140px; resize: vertical; }
+input[type=file] { width: 100%; color: var(--cream); font-size: 16px; }
+.hint { font-size: 0.85rem; color: var(--gray); margin: 4px 0 0; }
+
+/* Honeypot field: hidden from people, visible to dumb bots */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+button[type=submit] {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  min-height: 48px;
+  font: inherit;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: var(--red);
+  border: 4px outset #e65a70;
+  cursor: pointer;
+}
+button[type=submit]:hover, button[type=submit]:focus { background: var(--gold); color: #000; }
+button[disabled] { opacity: 0.6; cursor: wait; }
+
+.status { margin-top: 14px; padding: 12px; border: 3px solid; display: none; font-weight: bold; }
+.status.ok { display: block; border-color: #5fd16f; color: #b9f5c1; background: #12301a; }
+.status.err { display: block; border-color: #ff8a9b; color: #ffd1d8; background: #3a1018; }
+
+#previews { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+#previews img { width: 72px; height: 72px; object-fit: cover; border: 2px solid var(--gold); }
+
+/* Footer */
+footer { text-align: center; padding: 24px 0 32px; color: var(--gray); }
+.counter {
+  display: inline-block;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.2em;
+  background: #000;
+  color: #3dff5c;
+  border: 3px inset var(--gray);
+  padding: 4px 10px;
+  margin: 6px 0;
+}
+.badge {
+  display: inline-block;
+  border: 2px outset var(--gray);
+  background: #333;
+  color: var(--cream);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  margin: 4px;
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .cols, .contact-boxes { grid-template-columns: 1fr; }
+  nav a { flex: 1 1 40%; text-align: center; }
+}
+
+/* Respect people who turn off animation */
+@media (prefers-reduced-motion: reduce) {
+  .marquee span { animation: none; padding-left: 0; display: block; text-align: center; white-space: normal; }
+  .new { animation: none; }
+}
