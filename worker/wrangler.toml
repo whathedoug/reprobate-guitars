@@ -12,6 +12,12 @@ routes = [
 name = "EMAIL"
 destination_address = "reprobateguitars@gmail.com"
 
+# Guestbook database (D1). The table was created once with the SQL in worker/schema.sql.
+[[d1_databases]]
+binding = "DB"
+database_name = "reprobate-guestbook"
+database_id = "9fb7861f-aa72-4d63-9c32-6fb8adc85a59"
+
 [vars]
 # Must be an address on reprobate-guitars.com once Email Routing is enabled for the domain.
 FROM_ADDRESS = "forms@reprobate-guitars.com"

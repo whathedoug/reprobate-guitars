@@ -80,9 +80,9 @@
   form.addEventListener("submit", function (ev) {
     ev.preventDefault();
 
-    var name = form.name.value.trim();
-    var email = form.email.value.trim();
-    var message = form.message.value.trim();
+    var name = form.elements.name.value.trim();
+    var email = form.elements.email.value.trim();
+    var message = form.elements.message.value.trim();
 
     if (!name || !email || !message) {
       showStatus("err", "Please fill in your name, email and a short message.");
@@ -108,11 +108,11 @@
         var data = new FormData();
         data.append("name", name);
         data.append("email", email);
-        data.append("phone", form.phone.value.trim());
-        data.append("instrument", form.instrument.value.trim());
-        data.append("service", form.service.value);
+        data.append("phone", form.elements.phone.value.trim());
+        data.append("instrument", form.elements.instrument.value.trim());
+        data.append("service", form.elements.service.value);
         data.append("message", message);
-        data.append("website", form.website.value); // honeypot
+        data.append("website", form.elements.website.value); // honeypot
         shrunk.forEach(function (f) { data.append("photos", f, f.name); });
         return fetch(FORM_ENDPOINT, { method: "POST", body: data });
       })

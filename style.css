@@ -240,6 +240,26 @@ button[disabled] { opacity: 0.6; cursor: wait; }
 #previews { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 #previews img { width: 72px; height: 72px; object-fit: cover; border: 2px solid var(--gold); }
 
+/* Guestbook */
+.gb-count {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin: 28px 0 8px;
+}
+.gb-entry {
+  background: var(--panel);
+  border: 3px ridge var(--gray);
+  margin: 0 0 12px;
+  padding: 10px 14px;
+}
+.gb-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; border-bottom: 1px dashed var(--gray); padding-bottom: 4px; }
+.gb-name { font-weight: bold; color: var(--gold); overflow-wrap: anywhere; }
+.gb-from { color: var(--gray); }
+.gb-date { font-family: "Courier New", monospace; color: #3dff5c; }
+.gb-msg { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+
 /* Footer */
 footer { text-align: center; padding: 24px 0 32px; color: var(--gray); }
 .counter {
