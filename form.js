@@ -3,8 +3,7 @@
 
   // Where the form gets sent. This is the Cloudflare Worker (see /worker).
   // Leave empty until the Worker is deployed; the form will then tell visitors to text or email instead.
-  // When the Worker is live, set this to: "https://forms.reprobate-guitars.com/contact"
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://forms.reprobate-guitars.com/contact";
 
   var MAX_PHOTOS = 5;
   var MAX_DIMENSION = 1600; // longest side in pixels after shrinking
