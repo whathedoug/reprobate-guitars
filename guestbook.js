@@ -11,6 +11,7 @@
   var btn = document.getElementById("gb-btn");
 
   function showStatus(kind, text) {
+    if (!statusBox) { return; }
     statusBox.className = "status " + kind;
     statusBox.textContent = text;
   }
@@ -33,7 +34,9 @@
 
   function render(entries, total) {
     list.innerHTML = "";
-    countHeading.textContent = total === 1 ? "1 entry so far" : total + " entries so far";
+    if (countHeading) {
+      countHeading.textContent = total === 1 ? "1 entry so far" : total + " entries so far";
+    }
     if (!entries.length) {
       list.appendChild(el("p", "small", "No entries yet. Be the first to sign!"));
       return;
@@ -54,6 +57,7 @@
   }
 
   function load() {
+    if (!list) { return Promise.resolve(); }
     return fetch(GUESTBOOK_URL)
       .then(function (r) { return r.json(); })
       .then(function (data) {
@@ -66,7 +70,7 @@
       });
   }
 
-  form.addEventListener("submit", function (ev) {
+  if (form) form.addEventListener("submit", function (ev) {
     ev.preventDefault();
     var name = form.elements.name.value.trim();
     var message = form.elements.message.value.trim();
@@ -93,15 +97,17 @@
       })
       .then(function () {
         form.reset();
-        showStatus("ok", "Thanks for signing! Your note is up there now.");
-        return load();
+        showStatus("ok", "Thanks for signing! Taking you to the guestbook...");
+        setTimeout(function () { window.location.href = "guestbook.html"; }, 1200);
       })
       .catch(function (err) {
         showStatus("err", (err && err.message) || "Something went wrong. Please try again.");
       })
       .then(function () {
-        btn.disabled = false;
-        btn.textContent = "Sign it!";
+        if (statusBox.className.indexOf("ok") === -1) {
+          btn.disabled = false;
+          btn.textContent = "Sign it!";
+        }
       });
   });
 

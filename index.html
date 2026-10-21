@@ -125,31 +125,11 @@
     </section>
 
     <section id="guestbook" aria-labelledby="gb-h">
-      <h2 id="gb-h">Sign My Guestbook! <span class="new">NEW!</span></h2>
-      <p>Been by the shop? Got a guitar we fixed? Leave a note for the next cool cat. Please keep it friendly, and no links.</p>
-
-      <form id="gb-form" novalidate>
-        <label for="gb-name">Your name <span class="req">*</span></label>
-        <input type="text" id="gb-name" name="name" required maxlength="40" autocomplete="nickname">
-
-        <label for="gb-location">Where you're from (optional)</label>
-        <input type="text" id="gb-location" name="location" maxlength="60" placeholder="e.g. Springfield, MO" autocomplete="off">
-
-        <label for="gb-message">Your message <span class="req">*</span></label>
-        <textarea id="gb-message" name="message" required maxlength="500" placeholder="Say hi!"></textarea>
-        <p class="hint">500 characters max.</p>
-
-        <div class="hp" aria-hidden="true">
-          <label for="gb-website">Leave this empty</label>
-          <input type="text" id="gb-website" name="website" tabindex="-1" autocomplete="off">
-        </div>
-
-        <button type="submit" id="gb-btn">Sign it!</button>
-        <div id="gb-status" class="status" role="status" aria-live="polite"></div>
-      </form>
-
-      <h3 class="gb-count" id="gb-count">Guestbook entries</h3>
-      <div id="gb-list" aria-live="polite"><p class="small">Loading the guestbook...</p></div>
+      <h2 id="gb-h">Guestbook</h2>
+      <div class="gb-links">
+        <a class="gb-tile" href="sign.html"><svg viewBox="0 0 48 48" width="56" height="56" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="6" width="28" height="36" fill="#f5efe0" stroke="#000" stroke-width="2"/><rect x="6" y="6" width="28" height="7" fill="#c8203c" stroke="#000" stroke-width="2"/><rect x="11" y="19" width="18" height="2" fill="#555"/><rect x="11" y="25" width="18" height="2" fill="#555"/><rect x="11" y="31" width="12" height="2" fill="#555"/><polygon points="44,10 47,13 30,34 26,35 27,31" fill="#f4c430" stroke="#000" stroke-width="2"/><polygon points="26,35 27,31 30,34" fill="#333"/></svg><span>Sign our<br>Guestbook!</span></a>
+        <a class="gb-tile" href="guestbook.html"><svg viewBox="0 0 48 48" width="56" height="56" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="10" width="21" height="30" fill="#f5efe0" stroke="#000" stroke-width="2"/><rect x="24" y="10" width="21" height="30" fill="#f5efe0" stroke="#000" stroke-width="2"/><rect x="22" y="8" width="4" height="34" fill="#c8203c" stroke="#000" stroke-width="2"/><rect x="7" y="17" width="12" height="2" fill="#555"/><rect x="7" y="23" width="12" height="2" fill="#555"/><rect x="7" y="29" width="9" height="2" fill="#555"/><rect x="29" y="17" width="12" height="2" fill="#555"/><rect x="29" y="23" width="12" height="2" fill="#555"/><rect x="29" y="29" width="9" height="2" fill="#555"/></svg><span>View our<br>Guestbook!</span></a>
+      </div>
     </section>
   </main>
 
@@ -170,6 +150,5 @@
 <div class="checker" aria-hidden="true"></div>
 
 <script src="form.js"></script>
-<script src="guestbook.js"></script>
 </body>
 </html>
