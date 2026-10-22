@@ -389,3 +389,27 @@ footer { text-align: center; padding: 24px 0 32px; color: var(--gray); }
   .marquee span { animation: none; padding-left: 0; display: block; text-align: center; white-space: normal; }
   .new { animation: none; }
 }
+
+/* ---------- Gallery ---------- */
+.count { font-size: 0.8rem; font-weight: normal; color: var(--gray); }
+.gal { list-style: none; margin: 10px 0 18px; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); }
+.gal li { margin: 0; padding: 0; }
+.gal li::before { content: none; }
+.gal-item { display: block; border: 4px solid var(--red); background: var(--cream); line-height: 0; }
+.gal-item:hover, .gal-item:focus { border-color: var(--gold); outline: 2px solid #000; }
+.gal-item img { display: block; width: 100%; height: 190px; object-fit: contain; background: var(--cream); }
+.gal.photos .gal-item img { object-fit: cover; }
+.lb { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.92); display: flex; align-items: center; justify-content: center; padding: 12px; }
+.lb[hidden] { display: none; }
+.lb-fig { margin: 0; max-width: calc(100% - 110px); text-align: center; }
+.lb-fig img { max-width: 100%; max-height: 78vh; border: 6px solid var(--red); background: var(--cream); }
+.lb-fig figcaption { color: var(--cream); font-size: 0.95rem; margin-top: 8px; }
+.lb button { background: var(--gold); color: #000; border: 3px solid #000; font-size: 2rem; line-height: 1; cursor: pointer; min-width: 48px; min-height: 48px; }
+.lb button:hover, .lb button:focus { background: var(--cream); }
+.lb-close { position: absolute; top: 10px; right: 10px; }
+.lb-prev, .lb-next { flex: 0 0 auto; margin: 0 6px; }
+@media (max-width: 600px) {
+  .gal { grid-template-columns: repeat(2, 1fr); }
+  .gal-item img { height: 150px; }
+  .lb-fig { max-width: calc(100% - 100px); }
+}
